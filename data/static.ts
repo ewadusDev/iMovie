@@ -1,0 +1,24 @@
+export const LANGUAGES = [{ label: "English" }, { label: "Thai" }]
+export const FOOTERLINKS = [
+    { label: "FAQ", href: "" },
+    { label: "Investor Relations", href: "" },
+    { label: "Buy Gift Cards", href: "" },
+    { label: "Cookie Preference", href: "" },
+    { label: "Legal Notics", href: "" },
+    { label: "Help Center", href: "" },
+    { label: "Jobs", href: "" },
+    { label: "Ways to Watch", href: "" },
+    { label: "Corporate Information", href: "" },
+    { label: "Only on Netflix", href: "" },
+    { label: "Account", href: "" },
+    { label: "Netflix Shop", href: "" },
+    { label: "Terms of Use", href: "" },
+    { label: "Contact Us", href: "" },
+    { label: "Do Not Sell or Share my Personal Information", href: "" },
+    { label: "Media Center", href: "" },
+    { label: "Redeem Gift Cards", href: "" },
+    { label: "Privacy", href: "" },
+    { label: "Speed Test", href: "" },
+    { label: "Ad Choices", href: "" },
+
+]
