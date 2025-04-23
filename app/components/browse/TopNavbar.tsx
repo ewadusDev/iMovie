@@ -1,4 +1,7 @@
 import Image from "next/image";
+import Search from "../icons/Search";
+import Notification from "../icons/Notification";
+import ArrowDown from "../icons/ArrowDown";
 
 
 
@@ -19,11 +22,12 @@ const TopNavbar = () => {
             </div>
 
             <div className="flex gap-4">
-                <Image src={"/icons/Search.png"} alt="Search" width={32} height={32} />
-                <Image src={"/icons/Notification.png"} alt="Notification" width={32} height={32} />
+                {/* <Image src={"/icons/Search.png"} alt="Search" width={32} height={32} /> */}
+                <Search width={32} height={32} />
+                <Notification width={32} height={32} />
                 <div className="flex justify-center items-center">
                     <Image src={"/avartars/angryman.png"} alt="Avartars" width={32} height={32} />
-                    <Image src={"/icons/ArrowDown.png"} alt="ArrowDown" width={32} height={32} />
+                    <ArrowDown width={32} height={32} />
                 </div>
             </div>
 

@@ -10,8 +10,8 @@ const PickProfile = () => {
             <div className="flex gap-5">
                 <div className="flex flex-col items-center justify-center gap-4">
                     <Image
-                        src={"/browse/ProfileA.png"}
-                        alt="profilea"
+                        src={"/avartars/angryman.png"}
+                        alt="angryman"
                         width={144}
                         height={144}
                     />
