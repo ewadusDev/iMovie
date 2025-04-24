@@ -1,8 +1,13 @@
 // "use client"
 
+import { FOOTERLINKS, LANGUAGES } from "@/data/static";
 import Header from "../components/browse/Header";
 import PickProfile from "../components/browse/PickProfile";
 import TopNavbar from "../components/browse/TopNavbar";
+import ListCard from "../components/playlist/ListCard";
+import RankListCard from "../components/playlist/RankListCard";
+import DropdownLanguages from "../components/landing/Dropdown";
+import Link from "next/link";
 
 
 
@@ -17,15 +22,44 @@ const BrowsePage = async () => {
 
 
   return (
-    <main className="h-screen" >
+    <main className="h-screen relative" >
       {/* set vdo cover here */}
-      <div className="relative h-11/12 bg-[url(/contents/herobanner/header-movie-highlight-HouseOfNinjas.png)] bg-cover  ">
-        <div className="absolute inset-0 bg-black/20 " />
+      <div className="relative h-11/12 bg-[url(/contents/herobanner/header-movie-highlight-HouseOfNinjas.png)] bg-cover">
+        <div className="absolute inset-0 bg-black/10 " />
         <div className="relative z-10 container mx-auto">
           <TopNavbar />
           <Header />
         </div>
       </div>
+      <div className="relative top-[-80px] z-12 container ml-auto ">
+        <div className="flex flex-col gap-11">
+          <ListCard title="Matched to You" />
+          <ListCard title="New on Netflix" />
+          <RankListCard title="Top 10 movies in Thailand Today" />
+          <ListCard title="We Think You&apos;ll Love These" />
+        </div>
+        {/* footer */}
+        <footer className="pb-10">
+          <div className="container mx-auto">
+            <p className="py-5 text-white">Questions? Call 1-844-505-2993</p>
+            <div className="grid grid-cols-4 gap-1 py-5">
+              {FOOTERLINKS.map((link) => {
+                return (
+                  <Link href={link.href} key={link.label} className="w-fit">
+                    <p className="text-white underline hover:cursor-pointer">
+                      {link.label}
+                    </p>
+                  </Link>
+                );
+              })}
+            </div>
+
+            <DropdownLanguages items={LANGUAGES} />
+          </div>
+        </footer>
+      </div>
+
+
     </main>
 
   )
