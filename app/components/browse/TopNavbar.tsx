@@ -1,7 +1,6 @@
 import Image from "next/image";
-import Search from "../icons/Search";
-import Notification from "../icons/Notification";
-import ArrowDown from "../icons/ArrowDown";
+import { Search, Notification, ArrowDown } from "@/app/components/icons/Icons";
+
 
 
 

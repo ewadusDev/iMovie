@@ -1,8 +1,5 @@
 import Image from "next/image";
-import Play from "../icons/Play";
-import Info from "../icons/Info";
-
-
+import { Info, Play } from "@/app/components/icons/Icons";
 
 
 const Header = () => {
