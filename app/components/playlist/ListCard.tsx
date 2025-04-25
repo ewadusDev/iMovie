@@ -1,24 +1,19 @@
 import CardDetail from "./CardDetail";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
-
 
 
 const ListCard = ({ className, title }: { className?: string, title: string }) => {
 
-
     return (
-        <section className={`${className} flex flex-col gap-3.5`}>
+        <section className={`justify-center items-center ${className}`}>
             <h5 className="text-white text-2xl font-semibold">{title}</h5>
-            <Carousel>
-                <CarouselContent className="" >
+            <div className="relative overflow-x-hidden ">
+                <div className="flex gap-4 overflow-x-auto overflow-y-hidden no-scrollbar px-4 py-6 scroll-smooth">
                     {Array.from({ length: 10 }).map((_, index) => (
-                        <CarouselItem className="basis-1/5 mr-5 " key={index}>
-                            <CardDetail />
-                        </CarouselItem>
+                        <CardDetail key={index} />
                     ))}
-                </CarouselContent>
-            </Carousel>
+                </div>
+            </div>
         </section>
     )
-};
+}
 export default ListCard;

@@ -31,8 +31,8 @@ const BrowsePage = async () => {
           <Header />
         </div>
       </div>
-      <div className="relative top-[-80px] z-12 container ml-auto ">
-        <div className="flex flex-col gap-11">
+      <div className="relative top-[-80px] z-12 container mx-auto ">
+        <div className="flex flex-col">
           <ListCard title="Matched to You" />
           <ListCard title="New on Netflix" />
           <RankListCard title="Top 10 movies in Thailand Today" />

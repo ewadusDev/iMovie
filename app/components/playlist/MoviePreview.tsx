@@ -1,36 +1,38 @@
 import Image from "next/image";
-import { Play, Add, ThumUp, ArrowDown } from "../icons/MoviePreview";
-
+import { IoPlayCircle, IoAddCircle, IoThumbsUpOutline, IoArrowDownCircle } from "react-icons/io5";
 
 const MoviePreview = () => {
     return (
-        <div className="w-[323px] flex flex-col gap-4 rounded-sm">
-            <div className="w-full relative">
-                <Image src={"/browse/movie-preview.png"} alt="movie-preview" width={323} height={181} />
-
+        <div className="w-full h-full bg-black text-white flex flex-col">
+            <div className="w-full h-[60%] relative">
+                <Image
+                    src={"/browse/movie-preview.png"}
+                    alt={"movie-preview"}
+                    className="w-full h-full object-cover"
+                    layout="fill"
+                    priority
+                />
             </div>
-            <div className="flex justify-between px-5">
+            <div className="flex justify-between px-5 py-2">
                 <div className="flex gap-2">
-                    <Play />
-                    <Add />
-                    <ThumUp />
+                    <IoPlayCircle size={24} color="#fff" />
+                    <IoAddCircle size={24} color="#fff" />
+                    <IoThumbsUpOutline size={24} color="#fff" />
                 </div>
-                <ArrowDown />
+                <IoArrowDownCircle size={24} color="#fff" />
             </div>
-            <div className="flex gap-2 px-3 text-white">
+            <div className="flex gap-2 px-3 text-white text-sm">
                 <p className="font-semibold">New</p>
                 <p>TV-MA</p>
                 <p>3 Seasons</p>
                 <p>HD</p>
             </div>
-            <div className="flex gap-2 px-3 text-white">
+            <div className="flex gap-2 px-3 text-white text-sm">
                 <p>Violent</p>
                 <p>Dark</p>
                 <p>Action</p>
             </div>
-
-
         </div>
-    )
+    );
 };
 export default MoviePreview;
