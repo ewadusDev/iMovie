@@ -8,11 +8,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const CardDetail = () => {
     const [hovered, setHovered] = useState(false);
+    const [showMiniMovie, setShowMiniMovie] = useState(false)
 
     return (
         <div className="relative w-64 h-32 bg-gray-800 rounded-lg shrink-0 hover:cursor-pointer"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
+            onClick={() => setShowMiniMovie(true)}
         >
             <div className="w-full h-full flex flex-col justify-between rounded-[2px] bg-[url(/contents/listcontent/HorizontalHomePage.png)] bg-cover">
                 {/* Netflix logo */}

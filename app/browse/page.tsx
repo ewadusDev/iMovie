@@ -1,4 +1,4 @@
-// "use client"
+"use client"
 
 import { FOOTERLINKS, LANGUAGES } from "@/data/static";
 import Header from "../components/browse/Header";
@@ -8,10 +8,13 @@ import ListCard from "../components/playlist/ListCard";
 import RankListCard from "../components/playlist/RankListCard";
 import DropdownLanguages from "../components/landing/Dropdown";
 import Link from "next/link";
+import { useState } from "react";
+import MiniMovieMenu from "../components/playlist/MiniMovieMenu";
 
 
 
-const BrowsePage = async () => {
+const BrowsePage = () => {
+  const [showMiniMovie, setShowMiniMovie] = useState(false)
 
 
   // return (
@@ -53,12 +56,18 @@ const BrowsePage = async () => {
                 );
               })}
             </div>
-
             <DropdownLanguages items={LANGUAGES} />
           </div>
         </footer>
       </div>
 
+
+      {showMiniMovie &&
+        (
+          <div className="absolute top-0 z-50 ">
+            <MiniMovieMenu />
+          </div>
+        )}
 
     </main>
 
