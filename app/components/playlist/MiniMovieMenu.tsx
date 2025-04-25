@@ -1,9 +1,14 @@
+"use client"
+
+import { BrowseContext } from "@/app/browse/page";
+import { useContext } from "react";
 import { IoPlayCircle, IoAdd, IoThumbsUpOutline, IoCloseOutline } from "react-icons/io5";
 
 const MiniMovieMenu = () => {
-    return <section className=" bg-black/70 py-7">
+    const { setShowMiniMovie } = useContext(BrowseContext);
 
-        <div className="w-2/4 mx-auto  text-white  bg-black ">
+    return <section className=" bg-black/70 py-7">
+        <div className="w-2/4 mx-auto text-white  bg-black ">
             {/* Header */}
             <header className="relative w-full h-[400px] p-6 bg-[url(/contents/herobanner/hero-Image.png)] bg-cover flex items-end">
                 <div className="flex gap-3">
@@ -11,7 +16,7 @@ const MiniMovieMenu = () => {
                     <button className="w-9 h-9 flex items-center justify-center border border-gray-200 rounded-full"><IoAdd size={24} /></button>
                     <button className="w-9 h-9 flex items-center justify-center border border-gray-200 rounded-full"><IoThumbsUpOutline size={20} /></button>
                 </div>
-                <button className="absolute top-2 right-2"><IoCloseOutline size={40} /></button>
+                <button className="absolute top-2 right-2" onClick={() => setShowMiniMovie(false)}><IoCloseOutline size={40} /></button>
 
             </header>
             {/* Movie Detail */}
@@ -62,18 +67,13 @@ const MiniMovieMenu = () => {
                                     <h6>55m</h6>
                                 </div>
 
-                                <p>While Haru Tawara develops a crush on a mysterious young woman at work, an unusual opportunity arises at his father's financially struggling brewery.</p>
+                                <p>While Haru Tawara develops a crush on a mysterious young woman at work, an unusual opportunity arises at his father&rsquo;s financially struggling brewery.</p>
                             </div>
                         </div>
                     </div>
-
                 ))}
-
-
             </section>
-
         </div>
-
     </section>
 };
 export default MiniMovieMenu;
