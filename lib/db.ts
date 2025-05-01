@@ -1,13 +1,13 @@
 "use server"
 import mongoose from "mongoose";
-import * as Minio from 'minio'
+import { Client as Minio } from 'minio'
 
 const MONGO_URI = process.env.MONGO_URI
 const MINIO_ACCESSKEY = process.env.MINIO_ACCESSKEY
 const MINIO_SECRETKEY = process.env.MINIO_SECRETKEY
 const MINIO_ENDPOINT = process.env.MINIO_ENDPOINT
 const MINIO_PORT = process.env.MINIO_PORT
-// const MINIO_BUCKET = process.env.MINIO_BUCKET
+const MINIO_BUCKET = process.env.MINIO_BUCKET
 
 
 export const connectMongoDB = async () => {
@@ -29,8 +29,8 @@ export const connectMongoDB = async () => {
 
 
 
-export const minioClient = async () => {
-    const client = new Minio.Client({
+export const minioClient = async (formatObject: string) => {
+    const client = new Minio({
         endPoint: MINIO_ENDPOINT,
         port: MINIO_PORT,
         useSSL: false,
@@ -42,9 +42,9 @@ export const minioClient = async () => {
 
 
     try {
-        const resposne = await client.listBuckets()
-        console.log(resposne)
+        const url = await client.presignedGetObject(MINIO_BUCKET, formatObject, 60)
         console.log("minio database connected")
+        return url
 
     } catch (err) {
         console.log(err)

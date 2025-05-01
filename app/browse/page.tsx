@@ -10,21 +10,21 @@ import DropdownLanguages from "../components/landing/Dropdown";
 import Link from "next/link";
 import { createContext, useState } from "react";
 import MiniMovieMenu from "../components/playlist/MiniMovieMenu";
+import { BrowseContextType } from "@/types/context"
 
 
-type BrowseContextType = {
-  showMiniMovie: boolean;
-  setShowMiniMovie: React.Dispatch<React.SetStateAction<boolean>>;
-};
 
 export const BrowseContext = createContext<BrowseContextType>({
   showMiniMovie: false,
-  setShowMiniMovie: () => { }
+  setShowMiniMovie: () => { },
+  playMovie: false,
+  setPlayMovie: () => { }
 });
 
 
 const BrowsePage = () => {
   const [showMiniMovie, setShowMiniMovie] = useState(false)
+  const [playMovie, setPlayMovie] = useState(false)
 
 
   // return (
@@ -33,9 +33,8 @@ const BrowsePage = () => {
   //   </main>
   // );
 
-
   return (
-    <BrowseContext.Provider value={{ showMiniMovie, setShowMiniMovie }}>
+    <BrowseContext.Provider value={{ showMiniMovie, setShowMiniMovie, playMovie, setPlayMovie }}>
       <main className="h-screen relative" >
         {/* set vdo cover here */}
         <div className="relative h-11/12 bg-[url(/contents/herobanner/header-movie-highlight-HouseOfNinjas.png)] bg-cover">
@@ -75,7 +74,7 @@ const BrowsePage = () => {
 
         {showMiniMovie &&
           (
-            <div className="absolute top-0 z-50">
+            <div className="absolute top-0 z-30">
               <MiniMovieMenu />
             </div>
           )}

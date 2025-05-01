@@ -6,10 +6,10 @@ import { Search, Notification, ArrowDown } from "@/app/components/icons/Icons";
 
 const TopNavbar = () => {
     return (
-        <nav className="flex justify-between py-6">
+        <nav className="flex justify-between items-center py-6">
 
             <div className="flex items-center gap-11">
-                <Image src={"/logo/medium-logo.png"} alt="Logo" width={93} height={25} />
+                <h4 className="text-4xl font-bold text-[#C600D1]">NETFLIX888</h4>
                 <ul className="text-white flex gap-5">
                     <li>Home</li>
                     <li>TV Shows</li>
@@ -17,7 +17,6 @@ const TopNavbar = () => {
                     <li>New & Popular</li>
                     <li>My List</li>
                 </ul>
-
             </div>
 
             <div className="flex gap-4">

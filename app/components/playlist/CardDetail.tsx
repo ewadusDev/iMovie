@@ -2,20 +2,17 @@
 
 import Image from "next/image";
 import MoviePreview from "./MoviePreview";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
-import { BrowseContext } from "@/app/browse/page";
 
 
 const CardDetail = () => {
     const [hovered, setHovered] = useState(false);
-    const { setShowMiniMovie } = useContext(BrowseContext);
 
     return (
         <div className="relative w-64 h-32 bg-gray-800 rounded-lg shrink-0 hover:cursor-pointer"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            onClick={() => setShowMiniMovie(true)}
         >
             <div className="w-full h-full flex flex-col justify-between rounded-[2px] bg-[url(/contents/listcontent/HorizontalHomePage.png)] bg-cover">
                 {/* Netflix logo */}
