@@ -1,9 +1,11 @@
+import { FOOTERLINKS, LANGUAGES } from "@/data/static";
 import Image from "next/image";
 import Link from "next/link";
 import DropdownLanguages from "../components/landing/Dropdown";
-import { FOOTERLINKS, LANGUAGES } from "@/data/static";
 
-const LoginPage = () => {
+
+
+const SignUpPage = () => {
     return (
         <main className="">
             <div className="relative bg-[url(/home/hero/hero-bg-image.png)] bg-cover bg-center">
@@ -18,11 +20,21 @@ const LoginPage = () => {
                         />
                     </nav>
 
-                    <div className="mx-auto flex w-[500px] flex-col gap-4 bg-black/50 px-12 pt-12 pb-20">
-                        <h1 className="text-4xl font-semibold text-white">Sign In</h1>
+                    <form className="mx-auto flex w-[500px] flex-col gap-4 bg-black/50 px-12 pt-12 pb-20">
+                        <h1 className="text-4xl font-semibold text-white">Sign Up</h1>
                         <input
                             type="text"
-                            placeholder="Email or Phone Number"
+                            placeholder="Fullname"
+                            className="rounded-sm border border-[#808080] px-4 py-2 text-lg text-white placeholder-white"
+                        />
+                        <input
+                            type="text"
+                            placeholder="username"
+                            className="rounded-sm border border-[#808080] px-4 py-2 text-lg text-white placeholder-white"
+                        />
+                        <input
+                            type="email"
+                            placeholder="Email"
                             className="rounded-sm border border-[#808080] px-4 py-2 text-lg text-white placeholder-white"
                         />
                         <input
@@ -30,28 +42,19 @@ const LoginPage = () => {
                             placeholder="Password"
                             className="rounded-sm border border-[#808080] px-4 py-2 text-lg text-white placeholder-white"
                         />
-                        <button className="rounded-sm bg-[#e50914] px-4 py-2 text-lg font-semibold text-white">
-                            Sign In
+                        <input
+                            type="password"
+                            placeholder="Confirm Password"
+                            className="rounded-sm border border-[#808080] px-4 py-2 text-lg text-white placeholder-white"
+                        />
+                        <button className="rounded-sm bg-[#e50914] px-4 py-2 text-lg font-semibold text-white" type="submit">
+                            Create Account
                         </button>
-                        <p className="text-center text-lg text-white">OR</p>
-                        <button className="rounded-sm bg-gray-300/20 px-4 py-2 text-lg font-semibold text-white">
-                            Use a Sign-In Code
-                        </button>
-                        <p className="text-center text-lg text-white">Forgot Password?</p>
-                        <div className="flex gap-3">
-                            <input type="checkbox" />
-                            <p className="text-white">Remember me</p>
-                        </div>
                         <p className="text-white">
-                            New to Netflix?{" "}
-                            <span className="font-semibold">Sign up now.</span>
+                            Have an account? {" "}
+                            <span className="font-semibold underline"><Link href={"/signin"}>Sign in now.</Link></span>
                         </p>
-
-                        <p className="text-white">
-                            This page is protected by Google reCAPTCHA to ensure you’re not a
-                            bot. <span className="text-blue-500">Learn more.</span>
-                        </p>
-                    </div>
+                    </form>
 
                     <footer className="mt-5 bg-black/40 pb-10">
                         <div className="container mx-auto">
@@ -75,4 +78,4 @@ const LoginPage = () => {
         </main>
     );
 };
-export default LoginPage;
+export default SignUpPage;
