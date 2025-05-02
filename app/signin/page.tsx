@@ -1,9 +1,35 @@
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
 import DropdownLanguages from "../components/landing/Dropdown";
 import { FOOTERLINKS, LANGUAGES } from "@/data/static";
+import { signIn } from "next-auth/react"
+import { useRouter } from "next/navigation";
+
+
 
 const LoginPage = () => {
+    const router = useRouter()
+    const handleSigin = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+        const formData = new FormData(event.currentTarget)
+        const username = formData.get('username')
+        const password = formData.get('password')
+
+        try {
+            await signIn('credentials', {
+                redirect: false,
+                username,
+                password,
+                callbackUrl: "/browse"
+            })
+            router.push("/browse")
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
     return (
         <main className="">
             <div className="relative bg-[url(/home/hero/hero-bg-image.png)] bg-cover bg-center">
@@ -18,26 +44,30 @@ const LoginPage = () => {
                         />
                     </nav>
 
-                    <div className="mx-auto flex w-[500px] flex-col gap-4 bg-black/50 px-12 pt-12 pb-20">
+                    <form className="mx-auto flex w-[500px] flex-col gap-4 bg-black/50 px-12 pt-12 pb-20" onSubmit={handleSigin}>
                         <h1 className="text-4xl font-semibold text-white">Sign In</h1>
                         <input
                             type="text"
-                            placeholder="Email or Phone Number"
+                            name="username"
+                            placeholder="Email or username"
                             className="rounded-sm border border-[#808080] px-4 py-2 text-lg text-white placeholder-white"
                         />
                         <input
                             type="password"
+                            name="password"
                             placeholder="Password"
                             className="rounded-sm border border-[#808080] px-4 py-2 text-lg text-white placeholder-white"
                         />
-                        <button className="rounded-sm bg-[#e50914] px-4 py-2 text-lg font-semibold text-white">
+                        <button className="rounded-sm bg-[#e50914] px-4 py-2 text-lg font-semibold text-white"
+                            type="submit"
+                        >
                             Sign In
                         </button>
                         <p className="text-white">
                             New to Netflix?{" "}
                             <span className="font-semibold underline"><Link href={"/signup"}>Sign up now.</Link></span>
                         </p>
-                    </div>
+                    </form>
 
                     <footer className="mt-5 bg-black/40 pb-10">
                         <div className="container mx-auto">

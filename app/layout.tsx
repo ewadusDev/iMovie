@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import SessionWrapper from "./SessionWrapper";
+
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -18,10 +20,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={` ${poppins.className} bg-black antialiased`}>
-        {children}
-      </body>
-    </html>
+    <SessionWrapper>
+      <html lang="en">
+        <body className={` ${poppins.className} bg-black antialiased`}>
+          {children}
+        </body>
+      </html>
+    </SessionWrapper>
   );
 }
