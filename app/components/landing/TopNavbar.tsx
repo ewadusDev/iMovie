@@ -1,3 +1,5 @@
+"use client"
+import Link from "next/link";
 import DropdownLanguages from "./Dropdown";
 import { LANGUAGES } from "@/data/static";
 
@@ -8,7 +10,9 @@ const TopNavbar = () => {
       <div className="items-cente flex gap-5">
         <DropdownLanguages items={LANGUAGES} />
         <button className="rounded-sm bg-[#C600D1] px-3 py-1 text-sm text-white">
-          Sign In
+          <Link href={"/signin"}>
+            Sign In
+          </Link>
         </button>
       </div>
     </nav>

@@ -4,31 +4,39 @@ import Image from "next/image";
 import Link from "next/link";
 import DropdownLanguages from "../components/landing/Dropdown";
 import { FOOTERLINKS, LANGUAGES } from "@/data/static";
-import { signIn } from "next-auth/react"
+import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 
 
 const LoginPage = () => {
     const router = useRouter()
-    const handleSigin = async (event: React.FormEvent<HTMLFormElement>) => {
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
+    const { data: session } = useSession()
+
+    useEffect(() => {
+        if (session) {
+            router.replace("/browse")
+        }
+    }, [router, isAuthenticated, session])
+
+    const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         const formData = new FormData(event.currentTarget)
-        const username = formData.get('username')
+        const email = formData.get('email')
         const password = formData.get('password')
 
-        try {
-            await signIn('credentials', {
-                redirect: false,
-                username,
-                password,
-                callbackUrl: "/browse"
-            })
-            router.push("/browse")
-        } catch (error) {
-            console.error(error)
-        }
+        await signIn("credentials", {
+            email: email as string,
+            password: password as string,
+            redirect: false,
+        })
+
+        setIsAuthenticated(true)
     }
+
+
 
     return (
         <main className="">
@@ -44,11 +52,11 @@ const LoginPage = () => {
                         />
                     </nav>
 
-                    <form className="mx-auto flex w-[500px] flex-col gap-4 bg-black/50 px-12 pt-12 pb-20" onSubmit={handleSigin}>
+                    <form className="mx-auto flex w-[500px] flex-col gap-4 bg-black/50 px-12 pt-12 pb-20" onSubmit={handleLogin}>
                         <h1 className="text-4xl font-semibold text-white">Sign In</h1>
                         <input
                             type="text"
-                            name="username"
+                            name="email"
                             placeholder="Email or username"
                             className="rounded-sm border border-[#808080] px-4 py-2 text-lg text-white placeholder-white"
                         />

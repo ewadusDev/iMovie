@@ -9,7 +9,6 @@ export const authOptions: AuthOptions = {
         Credential({
             name: "Credentials",
             credentials: {
-                username: { label: "Username", type: "text" },
                 email: { label: "Email", type: "text" },
                 password: { label: "Password", type: "password" }
             },
@@ -17,7 +16,6 @@ export const authOptions: AuthOptions = {
                 if (!credentials || !credentials?.email || !credentials?.password) {
                     throw new Error("Email and password required")
                 }
-
                 const { email, password } = credentials
 
                 try {
@@ -36,6 +34,8 @@ export const authOptions: AuthOptions = {
                     if (!isCorrectPassword) {
                         throw new Error("Incorrect password")
                     }
+
+
                     return user
 
                 } catch (error) {
@@ -50,7 +50,10 @@ export const authOptions: AuthOptions = {
     pages: {
         signIn: "/signin",
     },
-    secret: process.env.NEXTAUTH_SECRET,
-    debug: process.env.NODE_ENV === "development",
+    // secret: process.env.NEXTAUTH_SECRET,
+    // session: {
+    //     strategy: "jwt"
+    // }
+    // debug: process.env.NODE_ENV === "development",
 
 }

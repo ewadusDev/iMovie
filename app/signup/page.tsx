@@ -1,11 +1,23 @@
+"use client"
+
 import { FOOTERLINKS, LANGUAGES } from "@/data/static";
 import Image from "next/image";
 import Link from "next/link";
 import DropdownLanguages from "../components/landing/Dropdown";
-
+import { useEffect } from "react";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 
 const SignUpPage = () => {
+    const router = useRouter()
+    const { data: session } = useSession()
+
+    useEffect(() => {
+        if (session) {
+            router.replace("/browse")
+        }
+    }, [router, session])
     return (
         <main className="">
             <div className="relative bg-[url(/home/hero/hero-bg-image.png)] bg-cover bg-center">

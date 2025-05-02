@@ -11,6 +11,7 @@ import Link from "next/link";
 import { createContext, useState } from "react";
 import MiniMovieMenu from "../components/playlist/MiniMovieMenu";
 import { BrowseContextType } from "@/types/context"
+import { useSession } from "next-auth/react";
 
 
 
@@ -23,10 +24,11 @@ export const BrowseContext = createContext<BrowseContextType>({
 
 
 const BrowsePage = () => {
+  const { data: session } = useSession()
   const [showMiniMovie, setShowMiniMovie] = useState(false)
   const [playMovie, setPlayMovie] = useState(false)
 
-
+  // console.log(session)
   // return (
   //   <main>
   //     <PickProfile />
