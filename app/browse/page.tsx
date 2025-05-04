@@ -8,10 +8,12 @@ import ListCard from "../components/playlist/ListCard";
 import RankListCard from "../components/playlist/RankListCard";
 import DropdownLanguages from "../components/landing/Dropdown";
 import Link from "next/link";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import MiniMovieMenu from "../components/playlist/MiniMovieMenu";
 import { BrowseContextType } from "@/types/context"
 import { useSession } from "next-auth/react";
+import { fetchMovies } from "@/lib/actions";
+
 
 
 
@@ -27,6 +29,7 @@ const BrowsePage = () => {
   const { data: session } = useSession()
   const [showMiniMovie, setShowMiniMovie] = useState(false)
   const [playMovie, setPlayMovie] = useState(false)
+  const [movies, setMovies] = useState([])
 
   // console.log(session)
   // return (
@@ -34,6 +37,26 @@ const BrowsePage = () => {
   //     <PickProfile />
   //   </main>
   // );
+
+  useEffect(() => {
+
+    const getMovies = async () => {
+
+      try {
+        const response = await fetchMovies()
+        setMovies(response)
+
+      } catch (error) {
+        console.log(error)
+      }
+
+    }
+
+    getMovies()
+
+  }, [])
+
+  console.log(movies)
 
   return (
     <BrowseContext.Provider value={{ showMiniMovie, setShowMiniMovie, playMovie, setPlayMovie }}>
@@ -48,10 +71,10 @@ const BrowsePage = () => {
         </div>
         <div className="relative top-[-80px] z-12 container mx-auto ">
           <div className="flex flex-col">
-            <ListCard title="Matched to You" />
-            <ListCard title="New on Netflix" />
-            <RankListCard title="Top 10 movies in Thailand Today" />
-            <ListCard title="We Think You&apos;ll Love These" />
+            <ListCard title="Matched to You" movies={movies} />
+            {/* <ListCard title="New on Netflix" /> */}
+            <RankListCard title="Top 10 movies in Thailand Today" movies={movies} />
+            {/* <ListCard title="We Think You&apos;ll Love These" /> */}
           </div>
           {/* footer */}
           <footer className="pb-10">

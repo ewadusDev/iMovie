@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { BrowseContext } from "@/app/browse/page";
 
 
-const MoviePreview = () => {
+const MoviePreview = ({ movie }) => {
     const { setShowMiniMovie } = useContext(BrowseContext);
 
     return (
@@ -14,11 +14,11 @@ const MoviePreview = () => {
                 onClick={() => setShowMiniMovie(true)}
             >
                 <Image
-                    src={"/browse/movie-preview.png"}
+                    src={movie?.thumbnailUrl || "/contents/herobanner/hero-Image.png"}
                     alt={"movie-preview"}
                     className="w-full h-full object-cover"
                     layout="fill"
-                    priority
+
                 />
             </div>
             <div className="flex justify-between px-5 py-2">

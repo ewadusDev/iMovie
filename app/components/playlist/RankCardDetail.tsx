@@ -8,7 +8,7 @@ import { BrowseContext } from "@/app/browse/page";
 
 
 
-const RankCardDetail = ({ length }: { length: number }) => {
+const RankCardDetail = ({ length, movie }: { length: number }) => {
     const [hovered, setHovered] = useState(false);
     const { setShowMiniMovie } = useContext(BrowseContext);
 
@@ -21,9 +21,10 @@ const RankCardDetail = ({ length }: { length: number }) => {
             <div className='flex justify-end text-white ' >
                 <p className="text-[200px] font-bold tracking-[-25px]">{length + 1}</p>
             </div>
-            <div className={`w-2/3 flex flex-col justify-between bg-[url(${'/contents/listcontent/HorizontalHomePage.png'})] bg-cover`}>
+            <div className={`w-2/3 flex flex-col justify-between  bg-gray-700 relative`}>
+                <Image src={movie.thumbnailUrl} fill objectFit="cover" alt="Image" className="" />
                 {/* Netflix logo */}
-                <div className="p-1.5">
+                <div className="p-1.5 z-40">
                     <Image src={"/logo/medium-letter.png"} alt="Logo" width={11} height={20} />
                 </div>
 
@@ -40,7 +41,7 @@ const RankCardDetail = ({ length }: { length: number }) => {
                         transition={{ duration: 0.3 }}
                         className="absolute top-[-10%] left-[-5%] z-50 w-72 h-[120%] shadow-2xl rounded-sm overflow-hidden "
                     >
-                        <MoviePreview />
+                        <MoviePreview movie={movie} />
                     </motion.div>
                 )}
             </AnimatePresence>

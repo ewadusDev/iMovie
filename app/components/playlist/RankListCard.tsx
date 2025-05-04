@@ -3,16 +3,22 @@
 import RankCardDetail from "./RankCardDetail";
 
 
-const RanListCard = ({ className, title }: { className?: string, title: string }) => {
+const RanListCard = ({ className, title, movies }: { className?: string, title: string, movie: [] }) => {
+    const movieList = movies.slice(0, 10).reverse();
+
 
     return (
         <section className={`${className} flex flex-col gap-3.5 `}>
             <h5 className="text-white text-2xl font-semibold">{title}</h5>
             <div className="relative overflow-x-hidden ">
                 <div className="flex gap-4 overflow-x-auto overflow-y-hidden no-scrollbar px-4 py-6 scroll-smooth">
-                    {Array.from({ length: 10 }).map((_, index) => (
-                        <RankCardDetail length={index} key={index} />
-                    ))}
+                    {movieList.map((movie, index: number) => {
+                        return (
+                            <RankCardDetail length={index} key={movie.id} movie={movie} />
+                        )
+                    })}
+
+
                 </div>
             </div>
 

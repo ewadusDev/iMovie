@@ -1,12 +1,13 @@
 
 import { Player as Tuby } from "react-tuby";
 import "react-tuby/css/main.css";
+import ReactHlsPlayer from "react-hls-player";
 
 
 const PlayerComponent = ({ url }: { url: string }) => {
     return <Tuby src={[
         {
-            quality: "Full HD",
+            quality: "1080p",
             url: url,
         },
         {
@@ -19,6 +20,9 @@ const PlayerComponent = ({ url }: { url: string }) => {
         }
 
     ]}
-        dimensions={{ width: "100%", height: "100%" }} />
+
+        dimensions={{ width: "100%", height: "100%" }} >
+        {(ref, props) => <ReactHlsPlayer playerRef={ref} {...props} />}
+    </Tuby>
 };
 export default PlayerComponent;
