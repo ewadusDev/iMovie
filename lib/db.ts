@@ -27,9 +27,7 @@ export const connectMongoDB = async () => {
     }
 }
 
-
-
-export const minioClient = async (formatObject: string) => {
+export const minioClient = async (filePath: string) => {
     const client = new Minio({
         endPoint: MINIO_ENDPOINT,
         port: MINIO_PORT,
@@ -38,18 +36,13 @@ export const minioClient = async (formatObject: string) => {
         secretKey: MINIO_SECRETKEY,
     })
 
-    // console.log("trying to connect to minio database")
-
-
     try {
-        const url = await client.presignedGetObject(MINIO_BUCKET, formatObject, 60)
-        console.log("minio database connected")
+        const url = await client.presignedGetObject(MINIO_BUCKET, decodeURIComponent(filePath), 60 * 60)
         return url
 
-    } catch (err) {
-        console.log(err)
+    } catch (error) {
+        console.log(error)
+
     }
-
-
 
 }
