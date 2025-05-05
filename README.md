@@ -46,7 +46,7 @@ Step set up mongodb with replica set (docker)
 
 ```bash
    rs.initiate({
-   \_id: "rs0",
+   _id: "rs0",
    members: [
    { _id: 0, host: "localhost:27017" }
    ]
@@ -93,3 +93,7 @@ thaimovie/iscream/iScream*ep10_1*คืนหลอน..บ้านท้าย
   duration
   videoUrl:   exmaple {/iscream/iScream*ep10_1*คืนหลอน..บ้านท้ายซอยx.m3u8} //จาก minio มาใส่
 ```
+
+10 ค่อยๆ อัพโหลด VDO ที่ละ 4 -5 folders ต่อครั้ง เผื่อไม่ให้docker ทำงานหนัก
+
+11 set ให้ busket เป็น public ด้วย
