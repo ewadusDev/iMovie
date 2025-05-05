@@ -1,18 +1,22 @@
 import { minioClient } from "@/lib/db"
+import prismadb from "@/lib/prismadb"
 import { NextResponse, NextRequest } from "next/server"
 
 
 export const POST = async (req: NextRequest) => {
-    const { filePath } = await req.json()
-    console.log(filePath)
-
-    if (!filePath || typeof filePath !== "string") {
-        return NextResponse.json({ error: "Invalid file path" }, { status: 400 })
-    }
-
+    const { id } = await req.json()
     try {
-        const url = await minioClient(filePath)
-        return NextResponse.json({ url }, { status: 200 })
+        const getVideoPath = await prismadb.movie.findUnique({
+            where: {
+                id
+            }
+        })
+        if (!getVideoPath) {
+            return NextResponse.json({ error: "Video not found" }, { status: 404 })
+        }
+
+        const url = await minioClient(getVideoPath.videoUrl)
+        return NextResponse.json({ url, getVideoPath }, { status: 200 })
 
     } catch (error) {
         console.error(error)
