@@ -6,17 +6,26 @@ import DropdownLanguages from "../components/landing/Dropdown";
 import { useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { useActionState } from "react"
+import { createUser } from "@/lib/actions";
 
 
 const SignUpPage = () => {
     const router = useRouter()
     const { data: session } = useSession()
+    const initialState = ""
+    const [state, actionForm] = useActionState(createUser, initialState)
+
+    if (state === "User created successfully") {
+        router.push("/signin")
+    }
 
     useEffect(() => {
         if (session) {
             router.replace("/browse")
         }
     }, [router, session])
+
     return (
         <main className="">
             <div className="relative bg-[url(/home/hero/hero-bg-image.png)] bg-cover bg-center">
@@ -27,31 +36,36 @@ const SignUpPage = () => {
 
                     </nav>
 
-                    <form className="mx-auto flex w-[500px] flex-col gap-4 bg-black/50 px-12 pt-12 pb-20">
+                    <form className="mx-auto flex w-[500px] flex-col gap-4 bg-black/50 px-12 pt-12 pb-20" action={actionForm}>
                         <h1 className="text-4xl font-semibold text-white">Sign Up</h1>
                         <input
                             type="text"
                             placeholder="Fullname"
+                            name="name"
                             className="rounded-sm border border-[#808080] px-4 py-2 text-lg text-white placeholder-white"
                         />
                         <input
                             type="text"
                             placeholder="username"
+                            name="username"
                             className="rounded-sm border border-[#808080] px-4 py-2 text-lg text-white placeholder-white"
                         />
                         <input
                             type="email"
                             placeholder="Email"
+                            name="email"
                             className="rounded-sm border border-[#808080] px-4 py-2 text-lg text-white placeholder-white"
                         />
                         <input
                             type="password"
                             placeholder="Password"
+                            name="password"
                             className="rounded-sm border border-[#808080] px-4 py-2 text-lg text-white placeholder-white"
                         />
                         <input
                             type="password"
                             placeholder="Confirm Password"
+                            name="cfPassword"
                             className="rounded-sm border border-[#808080] px-4 py-2 text-lg text-white placeholder-white"
                         />
                         <button className="rounded-sm bg-[#C600D1] px-4 py-2 text-lg font-semibold text-white" type="submit">
