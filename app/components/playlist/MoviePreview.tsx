@@ -3,15 +3,19 @@ import Link from "next/link";
 import { IoPlayCircle, IoAddCircle, IoThumbsUpOutline, IoArrowDownCircle } from "react-icons/io5";
 import { useContext } from "react";
 import { BrowseContext } from "@/app/browse/page";
+import { MovieMetadata } from "@/types/meta";
 
+const MoviePreview = ({ movie }: { movie: MovieMetadata }) => {
+    const { setShowMiniMovie, setSelectedMovie } = useContext(BrowseContext);
 
-const MoviePreview = ({ movie }) => {
-    const { setShowMiniMovie } = useContext(BrowseContext);
 
     return (
         <div className="w-full h-full bg-black text-white flex flex-col">
             <div className="w-full h-[60%] relative"
-                onClick={() => setShowMiniMovie(true)}
+                onClick={() => {
+                    setShowMiniMovie(true)
+                    setSelectedMovie(movie)
+                }}
             >
                 <Image
                     src={movie?.thumbnailUrl || "/contents/herobanner/hero-Image.png"}
@@ -23,7 +27,7 @@ const MoviePreview = ({ movie }) => {
             </div>
             <div className="flex justify-between px-5 py-2">
                 <div className="flex gap-2">
-                    <Link href={"/watch/12351"}>
+                    <Link href={`/watch/${movie.id}`}>
                         <IoPlayCircle size={24} color="#fff" />
                     </Link>
                     <IoAddCircle size={24} color="#fff" />

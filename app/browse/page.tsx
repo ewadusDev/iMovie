@@ -12,8 +12,9 @@ import { createContext, useEffect, useState } from "react";
 import MiniMovieMenu from "../components/playlist/MiniMovieMenu";
 import { BrowseContextType } from "@/types/context"
 import { useSession } from "next-auth/react";
-import { fetchMovies } from "@/lib/actions";
-
+import { fetchMovies, fetchRandomMovie } from "@/lib/actions";
+import Image from "next/image";
+import { MovieMetadata } from "@/types/meta"
 
 
 
@@ -21,7 +22,10 @@ export const BrowseContext = createContext<BrowseContextType>({
   showMiniMovie: false,
   setShowMiniMovie: () => { },
   playMovie: false,
-  setPlayMovie: () => { }
+  setPlayMovie: () => { },
+  selectedMovie: null,
+  setSelectedMovie: () => { },
+  movies: []
 });
 
 
@@ -29,40 +33,50 @@ const BrowsePage = () => {
   const { data: session } = useSession()
   const [showMiniMovie, setShowMiniMovie] = useState(false)
   const [playMovie, setPlayMovie] = useState(false)
-  const [movies, setMovies] = useState([])
+  const [movies, setMovies] = useState<MovieMetadata[]>([])
+  const [randomMovie, setRandomMovie] = useState<MovieMetadata | null>(null)
+  const [selectedMovie, setSelectedMovie] = useState<MovieMetadata | null>(null)
 
-  // console.log(session)
-  // return (
-  //   <main>
-  //     <PickProfile />
-  //   </main>
-  // );
 
   useEffect(() => {
 
     const getMovies = async () => {
-
       try {
-        const response = await fetchMovies()
-        setMovies(response)
-
+        const response = await fetchRandomMovie()
+        setRandomMovie(response)
       } catch (error) {
         console.log(error)
       }
-
     }
 
+    const randomMovie = async () => {
+      try {
+        const response = await fetchMovies()
+        setMovies(response)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    randomMovie()
     getMovies()
 
-  }, [])
+  }, [session])
 
-  console.log(movies)
+  if (!session) return (
+    <main>
+      <PickProfile />
+    </main>
+  )
+  if (randomMovie === null) return null
+
 
   return (
-    <BrowseContext.Provider value={{ showMiniMovie, setShowMiniMovie, playMovie, setPlayMovie }}>
+    <BrowseContext.Provider value={{ showMiniMovie, setShowMiniMovie, playMovie, setPlayMovie, selectedMovie, setSelectedMovie, movies }}>
       <main className="h-screen relative" >
         {/* set vdo cover here */}
-        <div className="relative h-11/12 bg-[url(/contents/herobanner/header-movie-highlight-HouseOfNinjas.png)] bg-cover">
+        <div className="h-10/12 bg-cover relative">
+          <Image src={randomMovie.thumbnailUrl || ""} alt="random" fill objectFit="cover" />
           <div className="absolute inset-0 bg-black/10 " />
           <div className="relative z-10 container mx-auto">
             <TopNavbar />
@@ -72,14 +86,12 @@ const BrowsePage = () => {
         <div className="relative top-[-80px] z-12 container mx-auto ">
           <div className="flex flex-col">
             <ListCard title="Matched to You" movies={movies} />
-            {/* <ListCard title="New on Netflix" /> */}
             <RankListCard title="Top 10 movies in Thailand Today" movies={movies} />
-            {/* <ListCard title="We Think You&apos;ll Love These" /> */}
           </div>
           {/* footer */}
           <footer className="pb-10">
             <div className="container mx-auto">
-              <p className="py-5 text-white">Questions? Call 1-844-505-2993</p>
+              <p className="py-5 text-white">Questions? Call 888-888-8888</p>
               <div className="grid grid-cols-4 gap-1 py-5">
                 {FOOTERLINKS.map((link) => {
                   return (
@@ -95,8 +107,6 @@ const BrowsePage = () => {
             </div>
           </footer>
         </div>
-
-
         {showMiniMovie &&
           (
             <div className="absolute top-0 z-30">
@@ -106,10 +116,6 @@ const BrowsePage = () => {
 
       </main>
     </BrowseContext.Provider>
-
-
   )
-
-
 };
 export default BrowsePage;

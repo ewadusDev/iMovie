@@ -1,9 +1,10 @@
 "use client"
 
 import RankCardDetail from "./RankCardDetail";
+import { MovieMetadata } from "@/types/meta"
 
 
-const RanListCard = ({ className, title, movies }: { className?: string, title: string, movie: [] }) => {
+const RanListCard = ({ className, title, movies }: { className?: string, title: string, movies: MovieMetadata[] }) => {
     const movieList = movies.slice(0, 10).reverse();
 
 
@@ -17,8 +18,6 @@ const RanListCard = ({ className, title, movies }: { className?: string, title: 
                             <RankCardDetail length={index} key={movie.id} movie={movie} />
                         )
                     })}
-
-
                 </div>
             </div>
 

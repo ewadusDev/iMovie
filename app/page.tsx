@@ -42,7 +42,9 @@ export default function Home() {
                   placeholder="Email address"
                   className="text-md w-full rounded-sm border-1 border-[#808080] bg-black/50 px-5 py-4 text-white placeholder-[#808080]"
                 />
-                <button className="w-[270px] rounded-sm bg-[#C600D1] px-4 text-xl font-medium text-white">
+                <button className="w-[270px] rounded-sm bg-[#C600D1] px-4 text-xl font-medium text-white"
+                  onClick={() => alert("Implement in future very soon")}
+                >
                   Get Started
                 </button>
               </div>
@@ -141,14 +143,14 @@ export default function Home() {
           <div className="px-36">
             <div className="mb-2" onClick={() => setIsCollaped1(!isCollaped1)}>
               <div className="flex items-center justify-between bg-[#2a2a2a] p-6">
-                <p className="text-white">What is Netflix?</p>
+                <p className="text-white">What is Netflix888?</p>
                 <p className="text-white">+</p>
               </div>
               <div
                 className={`mt-2 bg-[#2a2a2a] p-6 text-white ${isCollaped1 ? "block" : "hidden"}`}
               >
                 <p>
-                  Netflix is a streaming service that offers a wide variety of
+                  Netflix888 is a streaming service that offers a wide variety of
                   award-winning TV shows, movies, anime, documentaries, and more
                   on thousands of internet-connected devices.
                 </p>
@@ -164,14 +166,14 @@ export default function Home() {
 
             <div className="mb-2" onClick={() => setIsCollaped2(!isCollaped2)}>
               <div className="flex items-center justify-between bg-[#2a2a2a] p-6">
-                <p className="text-white">How much does Netflix cost?</p>
+                <p className="text-white">How much does Netflix888 cost?</p>
                 <p className="text-white">+</p>
               </div>
               <div
                 className={`mt-2 bg-[#2a2a2a] p-6 text-white ${isCollaped2 ? "block" : "hidden"}`}
               >
                 <p>
-                  Watch Netflix on your smartphone, tablet, Smart TV, laptop, or
+                  Watch Netflix888 on your smartphone, tablet, Smart TV, laptop, or
                   streaming device, all for one fixed monthly fee. Plans range
                   from $7.99 to $24.99 a month (pre-tax). No extra costs, no
                   contracts.
@@ -188,17 +190,17 @@ export default function Home() {
                 className={`mt-2 bg-[#2a2a2a] p-6 text-white ${isCollaped3 ? "block" : "hidden"}`}
               >
                 <p>
-                  Watch anywhere, anytime. Sign in with your Netflix account to
-                  watch instantly on the web at netflix.com from your personal
+                  Watch anywhere, anytime. Sign in with your Netflix888 account to
+                  watch instantly on the web at Netflix888.com from your personal
                   computer or on any internet-connected device that offers the
-                  Netflix app, including smart TVs, smartphones, tablets,
+                  Netflix888 app, including smart TVs, smartphones, tablets,
                   streaming media players and game consoles. You can also
                   download your favorite shows with the iOS or Android app.
                 </p>
                 <br />
                 <p>
                   Use downloads to watch while you&apos;re on the go and without
-                  an internet connection. Take Netflix with you anywhere.
+                  an internet connection. Take Netflix888 with you anywhere.
                 </p>
               </div>
             </div>
@@ -212,7 +214,7 @@ export default function Home() {
                 className={`mt-2 bg-[#2a2a2a] p-6 text-white ${isCollaped4 ? "block" : "hidden"}`}
               >
                 <p>
-                  Netflix is flexible. There are no pesky contracts and no
+                  Netflix888 is flexible. There are no pesky contracts and no
                   commitments. You can easily cancel your account online in two
                   clicks. There are no cancellation fees - start or stop your
                   account anytime.
@@ -222,15 +224,15 @@ export default function Home() {
 
             <div className="mb-2" onClick={() => setIsCollaped5(!isCollaped5)}>
               <div className="flex items-center justify-between bg-[#2a2a2a] p-6">
-                <p className="text-white">What can i watch on Netflix?</p>
+                <p className="text-white">What can i watch on Netflix888?</p>
                 <p className="text-white">+</p>
               </div>
               <div
                 className={`mt-2 bg-[#2a2a2a] p-6 text-white ${isCollaped5 ? "block" : "hidden"}`}
               >
                 <p>
-                  Netflix has an extensive library of feature films,
-                  documentaries, TV shows, anime, award-winning Netflix
+                  Netflix888 has an extensive library of feature films,
+                  documentaries, TV shows, anime, award-winning Netflix888
                   originals, and more. Watch as much as you want, anytime you
                   want.
                 </p>
@@ -239,7 +241,7 @@ export default function Home() {
 
             <div className="mb-2" onClick={() => setIsCollaped6(!isCollaped6)}>
               <div className="flex items-center justify-between bg-[#2a2a2a] p-6">
-                <p className="text-white">Is Netflix good for kids?</p>
+                <p className="text-white">Is Netflix888 good for kids?</p>
                 <p className="text-white">+</p>
               </div>
               <div
@@ -266,7 +268,9 @@ export default function Home() {
               placeholder="Email address"
               className="text-md w-full rounded-sm border-1 border-[#808080] bg-black/50 px-5 py-4 text-white placeholder-[#808080]"
             />
-            <button className="w-[270px] rounded-sm bg-[#C600D1] px-4 text-xl font-medium text-white">
+            <button className="w-[270px] rounded-sm bg-[#C600D1] px-4 text-xl font-medium text-white"
+              onClick={() => alert("Implement in future very soon")}
+            >
               Get Started
             </button>
           </div>
@@ -275,7 +279,7 @@ export default function Home() {
 
       <footer className="pb-10">
         <div className="container mx-auto">
-          <p className="py-5 text-white">Questions? Call 1-844-505-2993</p>
+          <p className="py-5 text-white">Questions? Call 888-888-8888</p>
           <div className="grid grid-cols-4 gap-1 py-5">
             {FOOTERLINKS.map((link) => {
               return (

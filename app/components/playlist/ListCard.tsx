@@ -1,7 +1,7 @@
 import CardDetail from "./CardDetail";
+import { MovieMetadata } from "@/types/meta"
 
-
-const ListCard = ({ className, title, movies }: { className?: string, title: string, movies: [] }) => {
+const ListCard = ({ className, title, movies }: { className?: string, title: string, movies: MovieMetadata[] }) => {
 
     return (
         <section className={`justify-center items-center ${className}`}>

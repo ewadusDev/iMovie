@@ -4,9 +4,10 @@ import Image from "next/image";
 import MoviePreview from "./MoviePreview";
 import { useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
+import { MovieMetadata } from "@/types/meta"
 
 
-const CardDetail = ({ movie }) => {
+const CardDetail = ({ movie }: { movie: MovieMetadata }) => {
     const [hovered, setHovered] = useState(false);
 
     return (
@@ -15,8 +16,8 @@ const CardDetail = ({ movie }) => {
             onMouseLeave={() => setHovered(false)}
         >
             <div className={`w-full h-full flex flex-col justify-between rounded-[2px] `}>
-                <Image src={movie.thumbnailUrl} fill objectFit="cover" alt="Image" sizes="100vw" className="rounded-[2px] " />
-                {/* Netflix logo */}
+                <Image src={movie.thumbnailUrl || ""} fill objectFit="cover" alt="Image" sizes="100vw" className="rounded-[2px]" />
+                {/* Netflix888 logo */}
                 <Image
                     src={'/logo/medium-letter.png'}
                     alt={"Image"}

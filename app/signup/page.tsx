@@ -1,7 +1,6 @@
 "use client"
 
 import { FOOTERLINKS, LANGUAGES } from "@/data/static";
-import Image from "next/image";
 import Link from "next/link";
 import DropdownLanguages from "../components/landing/Dropdown";
 import { useEffect } from "react";
@@ -24,12 +23,8 @@ const SignUpPage = () => {
                 <div className="absolute inset-0 bg-black/70" />
                 <div className="relative z-10 container mx-auto">
                     <nav className="flex h-fit items-center justify-between py-6">
-                        <Image
-                            src={"/logo/medium-logo.png"}
-                            alt="logo-netflix"
-                            width={148}
-                            height={40}
-                        />
+                        <h4 className="text-4xl font-bold text-[#C600D1]">NETFLIX888</h4>
+
                     </nav>
 
                     <form className="mx-auto flex w-[500px] flex-col gap-4 bg-black/50 px-12 pt-12 pb-20">
@@ -59,7 +54,7 @@ const SignUpPage = () => {
                             placeholder="Confirm Password"
                             className="rounded-sm border border-[#808080] px-4 py-2 text-lg text-white placeholder-white"
                         />
-                        <button className="rounded-sm bg-[#e50914] px-4 py-2 text-lg font-semibold text-white" type="submit">
+                        <button className="rounded-sm bg-[#C600D1] px-4 py-2 text-lg font-semibold text-white" type="submit">
                             Create Account
                         </button>
                         <p className="text-white">

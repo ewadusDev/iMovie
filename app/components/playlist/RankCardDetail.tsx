@@ -5,10 +5,11 @@ import MoviePreview from "./MoviePreview";
 import { useContext, useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
 import { BrowseContext } from "@/app/browse/page";
+import { MovieMetadata } from "@/types/meta"
 
 
 
-const RankCardDetail = ({ length, movie }: { length: number }) => {
+const RankCardDetail = ({ length, movie }: { length: number, movie: MovieMetadata }) => {
     const [hovered, setHovered] = useState(false);
     const { setShowMiniMovie } = useContext(BrowseContext);
 
@@ -18,12 +19,12 @@ const RankCardDetail = ({ length, movie }: { length: number }) => {
             onMouseLeave={() => setHovered(false)}
             onClick={() => setShowMiniMovie(true)}
         >
-            <div className='flex justify-end text-white ' >
+            <div className={`${length === 9 ? 'w-[110px]' : `w-[50px]`} flex justify-end text-white `} >
                 <p className="text-[200px] font-bold tracking-[-25px]">{length + 1}</p>
             </div>
-            <div className={`w-2/3 flex flex-col justify-between  bg-gray-700 relative`}>
-                <Image src={movie.thumbnailUrl} fill objectFit="cover" alt="Image" className="" />
-                {/* Netflix logo */}
+            <div className={`w-2/3 flex flex-col justify-between  bg-gray-700 relative `}>
+                <Image src={movie.thumbnailUrl || ""} fill objectFit="cover" alt="Image" className="" />
+                {/* Netflix888 logo */}
                 <div className="p-1.5 z-40">
                     <Image src={"/logo/medium-letter.png"} alt="Logo" width={11} height={20} />
                 </div>
