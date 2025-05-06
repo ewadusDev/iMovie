@@ -1,6 +1,6 @@
-# iMovie
+# iMovie VDO streaming application
 
-Individual project for practice and do port folio. not for public
+Individual project for studying and doing portfolio. not for public
 
 ## Environment Variables
 
@@ -23,6 +23,14 @@ To deploy this project run
 
 Step set up mongodb with replica set (docker)
 
+0. Docker compose up first everything's running fine then compose down.
+
+```bash
+   docker compose up -d
+   docker compose down
+```
+
+
 1. Generate mongo-keyfile
 
 ```bash
@@ -30,10 +38,12 @@ Step set up mongodb with replica set (docker)
    chmod 400 mongo-keyfile
 ```
 
-2. run docker compose
+2. run docker compose again
+
+** Please uncomment key in docker-compose.yml before run
 
 ```bash
-   docker compose up
+   docker compose up -d
 ```
 
 3. exec the mongo container
@@ -53,47 +63,46 @@ Step set up mongodb with replica set (docker)
    })
 ```
 
+
 5. Connet prisama and push db model to create collection in monogodb
 
 ```bash
-npx prisma db generate
+npx prisma generate
 npx prisma db push
 ```
 
-6. go on.....
+ **ถ้าไม่ได้ ให้ลองทำ แบบ เริ่มจาก deploy mongodb ธรรมดา ไม่ต้องมี replica set และไม่ต้องใส่ keyfile แล้วจากนั้น push prisma collection ไปก่อน ต่อไป ค่อย compose up อีกที
 
-7. ถ้าไม่ได้ ให้ลองทำ แบบ เริ่มจาก deploy mongodb ธรรมดา ไม่ต้องมี replica set และไม่ต้องใส่ keyfile แล้วจากนั้น push prisma collection ไปก่อน ต่อไป ค่อย compose down แล้วใส่ keyfile ลงใน command จากนั้นค่อย compose up อีกครั้ง และ connect mongo อีกที
-
-```bash
-  docker compose up
-```
-
-8. แปลงไฟล์ video เป็น .ts และ .m3u8 ไฟล์ ใน lib/convert-all.js
+6. Run application
 
 ```bash
-  node convert-all.js
+   npm run dev
 ```
 
-9. Seeding Metadata in database
+7. Seeding Metadata in database
 
-9.1 minio vdo stucture
+   go to http://localhost:3000/seed
+
+8. Set up minio database 
+- go to http://localhost:9000
+- create bucket and set public bucket in option
+- upload asset https://drive.google.com/file/d/1Djn6kGoA8uuJU1iAEF2QBXBUJjMK3LOC/view?usp=drive_link to the bucket
+- generate key access keys and put it to env file
+
+## File Structure
+- thaimovie (bucket name)
+   - iscream
+      - iScreamxxxxxx_ep1/iScream_ep1.ts
+      - iScreamxxxxxx_ep2/iScream_ep2.ts
+   - iscreatepreview
+      - iscream_preview_ep1.jpg
+
+
+9. ค่อยๆ อัพโหลด VDO ที่ละ 4 -5 folders ต่อครั้ง เผื่อไม่ให้ docker ทำงานหนัก
+
+10. ถ้ามีไฟล์ใหม่ แปลงไฟล์ video เป็น .ts และ .m3u8 ไฟล์ ใน lib/convert-all.ts
 
 ```bash
-thaimovie/iscream/iScream*ep10_1*คืนหลอน..บ้านท้ายซอยx.ts
-thaimovie/iscream/iScream*ep10_1*คืนหลอน..บ้านท้ายซอยx.m3u8
+  ts-node convert-all.ts
 ```
 
-9.2 seed movie collection
-
-```bash
-  _id objectid default
-  title
-  description
-  genre
-  duration
-  videoUrl:   exmaple {/iscream/iScream*ep10_1*คืนหลอน..บ้านท้ายซอยx.m3u8} //จาก minio มาใส่
-```
-
-10 ค่อยๆ อัพโหลด VDO ที่ละ 4 -5 folders ต่อครั้ง เผื่อไม่ให้docker ทำงานหนัก
-
-11 set ให้ busket เป็น public ด้วย
