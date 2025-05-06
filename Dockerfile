@@ -1,5 +1,3 @@
-# todo-list/Dockerfile
-
 FROM node:20.11.1-alpine
 
 WORKDIR /app

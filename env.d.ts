@@ -1,6 +1,7 @@
 declare namespace NodeJS {
   interface ProcessEnv {
-    MONGO_URI: string;
+    DATABASE_URL: string;
+    DATABASE_NAME: string
     NEXT_AUTH_SECRET: string;
     ACCESS_KEY: string;
     SECRET_KET: string;

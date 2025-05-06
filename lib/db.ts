@@ -2,7 +2,8 @@
 import mongoose from "mongoose";
 import { Client as Minio } from "minio";
 
-const MONGO_URI = process.env.MONGO_URI;
+const DATABASE_URL = process.env.DATABASE_URL;
+const DATABASE_NAME = process.env.DATABASE_NAME;
 const MINIO_ACCESSKEY = process.env.MINIO_ACCESSKEY;
 const MINIO_SECRETKEY = process.env.MINIO_SECRETKEY;
 const MINIO_ENDPOINT = process.env.MINIO_ENDPOINT;
@@ -16,8 +17,8 @@ export const connectMongoDB = async () => {
   }
 
   try {
-    await mongoose.connect(MONGO_URI, {
-      dbName: "mydatabase",
+    await mongoose.connect(DATABASE_URL, {
+      dbName: DATABASE_NAME || "imovie",
     });
     console.log("Connected to MongoDB");
   } catch (err) {
