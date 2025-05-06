@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { FOOTERLINKS, LANGUAGES } from "@/data/static";
 import Header from "../components/browse/Header";
@@ -8,85 +8,89 @@ import ListCard from "../components/playlist/ListCard";
 import RankListCard from "../components/playlist/RankListCard";
 import DropdownLanguages from "../components/landing/Dropdown";
 import Link from "next/link";
-import { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import MiniMovieMenu from "../components/playlist/MiniMovieMenu";
-import { BrowseContextType } from "@/types/context"
 import { useSession } from "next-auth/react";
 import { fetchMovies, fetchRandomMovie } from "@/lib/actions";
 import Image from "next/image";
-import { MovieMetadata } from "@/types/meta"
-
-
-
-export const BrowseContext = createContext<BrowseContextType>({
-  showMiniMovie: false,
-  setShowMiniMovie: () => { },
-  playMovie: false,
-  setPlayMovie: () => { },
-  selectedMovie: null,
-  setSelectedMovie: () => { },
-  movies: []
-});
-
+import { MovieMetadata } from "@/types/meta";
+import { BrowseContext } from "@/app/browse/browseContext";
 
 const BrowsePage = () => {
-  const { data: session } = useSession()
-  const [showMiniMovie, setShowMiniMovie] = useState(false)
-  const [playMovie, setPlayMovie] = useState(false)
-  const [movies, setMovies] = useState<MovieMetadata[]>([])
-  const [randomMovie, setRandomMovie] = useState<MovieMetadata | null>(null)
-  const [selectedMovie, setSelectedMovie] = useState<MovieMetadata | null>(null)
-
+  const { data: session } = useSession();
+  const [showMiniMovie, setShowMiniMovie] = useState(false);
+  const [playMovie, setPlayMovie] = useState(false);
+  const [movies, setMovies] = useState<MovieMetadata[]>([]);
+  const [randomMovie, setRandomMovie] = useState<MovieMetadata | null>(null);
+  const [selectedMovie, setSelectedMovie] = useState<MovieMetadata | null>(
+    null,
+  );
 
   useEffect(() => {
-
     const getMovies = async () => {
       try {
-        const response = await fetchRandomMovie()
-        setRandomMovie(response)
+        const response = await fetchRandomMovie();
+        setRandomMovie(response);
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
-    }
+    };
 
     const randomMovie = async () => {
       try {
-        const response = await fetchMovies()
-        setMovies(response)
+        const response = await fetchMovies();
+        setMovies(response);
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
-    }
+    };
 
-    randomMovie()
-    getMovies()
+    randomMovie();
+    getMovies();
+  }, [session]);
 
-  }, [session])
-
-  if (!session) return (
-    <main>
-      <PickProfile />
-    </main>
-  )
-  if (randomMovie === null) return null
-
+  if (!session)
+    return (
+      <main>
+        <PickProfile />
+      </main>
+    );
+  if (randomMovie === null) return null;
 
   return (
-    <BrowseContext.Provider value={{ showMiniMovie, setShowMiniMovie, playMovie, setPlayMovie, selectedMovie, setSelectedMovie, movies }}>
-      <main className="h-screen relative" >
+    <BrowseContext
+      value={{
+        showMiniMovie,
+        setShowMiniMovie,
+        playMovie,
+        setPlayMovie,
+        selectedMovie,
+        setSelectedMovie,
+        movies,
+      }}
+    >
+      <main className="relative h-screen">
         {/* set vdo cover here */}
-        <div className="h-10/12 bg-cover relative">
-          <Image src={randomMovie.thumbnailUrl || ""} alt="random" fill objectFit="cover" />
-          <div className="absolute inset-0 bg-black/10 " />
+        <div className="relative h-10/12 bg-cover">
+          <Image
+            src={randomMovie.thumbnailUrl || ""}
+            alt="random"
+            fill
+            objectFit="cover"
+          />
+          <div className="absolute inset-0 bg-black/10" />
           <div className="relative z-10 container mx-auto">
             <TopNavbar />
             <Header />
           </div>
         </div>
-        <div className="relative top-[-80px] z-12 container mx-auto ">
+        <div className="relative top-[-80px] z-12 container mx-auto">
           <div className="flex flex-col">
             <ListCard title="Matched to You" movies={movies} />
-            <RankListCard title="Top 10 movies in Thailand Today" movies={movies} />
+            <RankListCard
+              title="Top 10 movies in Thailand Today"
+              movies={movies}
+            />
           </div>
           {/* footer */}
           <footer className="pb-10">
@@ -107,15 +111,13 @@ const BrowsePage = () => {
             </div>
           </footer>
         </div>
-        {showMiniMovie &&
-          (
-            <div className="absolute top-0 z-30">
-              <MiniMovieMenu />
-            </div>
-          )}
-
+        {showMiniMovie && (
+          <div className="absolute top-0 z-30">
+            <MiniMovieMenu />
+          </div>
+        )}
       </main>
-    </BrowseContext.Provider>
-  )
+    </BrowseContext>
+  );
 };
 export default BrowsePage;

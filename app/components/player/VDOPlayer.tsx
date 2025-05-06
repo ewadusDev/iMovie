@@ -1,8 +1,7 @@
-
 import dynamic from "next/dynamic";
 
 const VDOPlayer = dynamic(() => import("./Player"), {
-    ssr: false,
+  ssr: false,
 });
 
-export default VDOPlayer
+export default VDOPlayer;

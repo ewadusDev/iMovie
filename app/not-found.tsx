@@ -1,6 +1,8 @@
 const NotFoundPage = () => {
-    return <div className="text-4xl text-white font-bold text-center h-screen flex items-center justify-center">
-        <p>I will implement this page later, sorry for inconvenience ＿|￣|○</p>
-    </div>;
+  return (
+    <div className="flex h-screen items-center justify-center text-center text-4xl font-bold text-white">
+      <p>I will implement this page later, sorry for inconvenience ＿|￣|○</p>
+    </div>
+  );
 };
-export default NotFoundPage
+export default NotFoundPage;

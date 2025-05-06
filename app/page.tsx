@@ -42,7 +42,8 @@ export default function Home() {
                   placeholder="Email address"
                   className="text-md w-full rounded-sm border-1 border-[#808080] bg-black/50 px-5 py-4 text-white placeholder-[#808080]"
                 />
-                <button className="w-[270px] rounded-sm bg-[#C600D1] px-4 text-xl font-medium text-white"
+                <button
+                  className="w-[270px] rounded-sm bg-[#C600D1] px-4 text-xl font-medium text-white"
                   onClick={() => alert("Implement in future very soon")}
                 >
                   Get Started
@@ -150,9 +151,9 @@ export default function Home() {
                 className={`mt-2 bg-[#2a2a2a] p-6 text-white ${isCollaped1 ? "block" : "hidden"}`}
               >
                 <p>
-                  Netflix888 is a streaming service that offers a wide variety of
-                  award-winning TV shows, movies, anime, documentaries, and more
-                  on thousands of internet-connected devices.
+                  Netflix888 is a streaming service that offers a wide variety
+                  of award-winning TV shows, movies, anime, documentaries, and
+                  more on thousands of internet-connected devices.
                 </p>
                 <br />
                 <p>
@@ -173,10 +174,10 @@ export default function Home() {
                 className={`mt-2 bg-[#2a2a2a] p-6 text-white ${isCollaped2 ? "block" : "hidden"}`}
               >
                 <p>
-                  Watch Netflix888 on your smartphone, tablet, Smart TV, laptop, or
-                  streaming device, all for one fixed monthly fee. Plans range
-                  from $7.99 to $24.99 a month (pre-tax). No extra costs, no
-                  contracts.
+                  Watch Netflix888 on your smartphone, tablet, Smart TV, laptop,
+                  or streaming device, all for one fixed monthly fee. Plans
+                  range from $7.99 to $24.99 a month (pre-tax). No extra costs,
+                  no contracts.
                 </p>
               </div>
             </div>
@@ -190,12 +191,12 @@ export default function Home() {
                 className={`mt-2 bg-[#2a2a2a] p-6 text-white ${isCollaped3 ? "block" : "hidden"}`}
               >
                 <p>
-                  Watch anywhere, anytime. Sign in with your Netflix888 account to
-                  watch instantly on the web at Netflix888.com from your personal
-                  computer or on any internet-connected device that offers the
-                  Netflix888 app, including smart TVs, smartphones, tablets,
-                  streaming media players and game consoles. You can also
-                  download your favorite shows with the iOS or Android app.
+                  Watch anywhere, anytime. Sign in with your Netflix888 account
+                  to watch instantly on the web at Netflix888.com from your
+                  personal computer or on any internet-connected device that
+                  offers the Netflix888 app, including smart TVs, smartphones,
+                  tablets, streaming media players and game consoles. You can
+                  also download your favorite shows with the iOS or Android app.
                 </p>
                 <br />
                 <p>
@@ -268,7 +269,8 @@ export default function Home() {
               placeholder="Email address"
               className="text-md w-full rounded-sm border-1 border-[#808080] bg-black/50 px-5 py-4 text-white placeholder-[#808080]"
             />
-            <button className="w-[270px] rounded-sm bg-[#C600D1] px-4 text-xl font-medium text-white"
+            <button
+              className="w-[270px] rounded-sm bg-[#C600D1] px-4 text-xl font-medium text-white"
               onClick={() => alert("Implement in future very soon")}
             >
               Get Started

@@ -3,8 +3,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    domains: ["localhost"]
-  }
+    domains: ["localhost"],
+    remotePatterns: [new URL('http://localhost:3000/b')],
+  },
 };
 
 export default nextConfig;
