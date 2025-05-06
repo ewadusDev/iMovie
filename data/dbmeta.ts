@@ -1,6 +1,6 @@
 import { MovieMetadata } from "@/types/meta";
 
-export const MOVIESEEDING: MovieMetadata[] = [
+export const MOVIESEEDING = [
   {
     title: "iScream EP1 บุกสุสานรถ",
     description:

@@ -21,7 +21,14 @@ const PlayerComponent = ({ url }: { url: string }) => {
       ]}
       dimensions={{ width: "100%", height: "100%" }}
     >
-      {(ref, props) => <ReactHlsPlayer playerRef={ref} {...props} autoPlay={true} onContextMenu={(e)=> e.preventDefault()} />}
+      {(ref, props) => (
+        <ReactHlsPlayer
+          playerRef={ref}
+          {...props}
+          autoPlay={true}
+          onContextMenu={(e) => e.preventDefault()}
+        />
+      )}
     </Tuby>
   );
 };

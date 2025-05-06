@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
-const { exec } = require("child_process");
-const fs = require("fs");
-const path = require("path");
+import { exec } from "child_process";
+import fs from "fs";
+import path from "path";
 
 const inputDir = path.join(__dirname, "videos"); // Input .mp4 folder
 const outputDir = path.join(__dirname, "hls"); // HLS output base
@@ -10,7 +9,7 @@ if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
 
-fs.readdirSync(inputDir).forEach((file) => {
+fs.readdirSync(inputDir).forEach((file: string) => {
   if (path.extname(file) === ".mp4") {
     const baseName = path.basename(file, ".mp4");
 
@@ -28,7 +27,7 @@ fs.readdirSync(inputDir).forEach((file) => {
 
     console.log(`Processing ${file}...`);
 
-    exec(ffmpegCmd, (err: { message: string }, stdout, stderr) => {
+    exec(ffmpegCmd, (err) => {
       if (err) {
         console.error(`Error converting ${file}:`, err.message);
       } else {

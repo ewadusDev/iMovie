@@ -21,6 +21,13 @@ To run this project, you will need to add the following environment variables to
 
 To deploy this project run
 
+Before run app
+
+```bash
+rm -rf node_modules package-lock.json
+npm install --legacy-peer-deps
+```
+
 Step set up mongodb with replica set (docker)
 
 0. Docker compose up first everything's running fine then compose down.
@@ -29,7 +36,6 @@ Step set up mongodb with replica set (docker)
    docker compose up -d
    docker compose down
 ```
-
 
 1. Generate mongo-keyfile
 
@@ -40,7 +46,7 @@ Step set up mongodb with replica set (docker)
 
 2. run docker compose again
 
-** Please uncomment key in docker-compose.yml before run
+\*\* Please uncomment key in docker-compose.yml before run
 
 ```bash
    docker compose up -d
@@ -63,7 +69,6 @@ Step set up mongodb with replica set (docker)
    })
 ```
 
-
 5. Connet prisama and push db model to create collection in monogodb
 
 ```bash
@@ -71,7 +76,7 @@ npx prisma generate
 npx prisma db push
 ```
 
- **ถ้าไม่ได้ ให้ลองทำ แบบ เริ่มจาก deploy mongodb ธรรมดา ไม่ต้องมี replica set และไม่ต้องใส่ keyfile แล้วจากนั้น push prisma collection ไปก่อน ต่อไป ค่อย compose up อีกที
+\*\*ถ้าไม่ได้ ให้ลองทำ แบบ เริ่มจาก deploy mongodb ธรรมดา ไม่ต้องมี replica set และไม่ต้องใส่ keyfile แล้วจากนั้น push prisma collection ไปก่อน ต่อไป ค่อย compose up อีกที
 
 6. Run application
 
@@ -83,20 +88,21 @@ npx prisma db push
 
    go to http://localhost:3000/seed
 
-8. Set up minio database 
+8. Set up minio database
+
 - go to http://localhost:9000
 - create bucket and set public bucket in option
 - upload asset https://drive.google.com/file/d/1Djn6kGoA8uuJU1iAEF2QBXBUJjMK3LOC/view?usp=drive_link to the bucket
 - generate key access keys and put it to env file
 
 ## File Structure
-- thaimovie (bucket name)
-   - iscream
-      - iScreamxxxxxx_ep1/iScream_ep1.ts
-      - iScreamxxxxxx_ep2/iScream_ep2.ts
-   - iscreatepreview
-      - iscream_preview_ep1.jpg
 
+- thaimovie (bucket name)
+  - iscream
+    - iScreamxxxxxx_ep1/iScream_ep1.ts
+    - iScreamxxxxxx_ep2/iScream_ep2.ts
+  - iscreatepreview
+    - iscream_preview_ep1.jpg
 
 9. ค่อยๆ อัพโหลด VDO ที่ละ 4 -5 folders ต่อครั้ง เผื่อไม่ให้ docker ทำงานหนัก
 
@@ -105,4 +111,3 @@ npx prisma db push
 ```bash
   ts-node convert-all.ts
 ```
-
