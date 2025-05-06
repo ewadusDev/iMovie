@@ -70,20 +70,20 @@ Step set up mongodb with replica set (docker)
    })
 ```
 
-5. Connet prisama and push db model to create collection in monogodb
+5. Run application
 
+```bash
+   npm run dev
+```
+
+
+6. Connet prisama and push db model to create collection in monogodb
 ```bash
 npx prisma generate
 npx prisma db push
 ```
 
 \*\*ถ้าไม่ได้ ให้ลองทำ แบบ เริ่มจาก deploy mongodb ธรรมดา ไม่ต้องมี replica set และไม่ต้องใส่ keyfile แล้วจากนั้น push prisma collection ไปก่อน ต่อไป ค่อย compose up อีกที
-
-6. Run application
-
-```bash
-   npm run dev
-```
 
 7. Seeding Metadata in database
 
