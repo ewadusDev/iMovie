@@ -4,14 +4,14 @@ services:
     image: mongo:8.0
     volumes:
       - mongo_data:/data/db
-      - ./mongo-keyfile:/etc/mongo-keyfile:ro
+      # - ./mongo-keyfile:/etc/mongo-keyfile:ro # uncomment and compose up again when generate mongo-keyfile
     restart: always
     ports:
       - 27017:27017
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-    command: "mongod --replSet rs0 --auth --keyFile /etc/mongo-keyfile --bind_ip_all"
+    # command: "mongod --replSet rs0 --auth --keyFile /etc/mongo-keyfile --bind_ip_all" # uncomment and compose up again when generate mongo-keyfile
 
   minio:
     image: minio/minio:RELEASE.2025-04-08T15-41-24Z
