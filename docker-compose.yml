@@ -4,14 +4,14 @@ services:
     image: mongo:8.0
     volumes:
       - mongo_data:/data/db
-      # - ./mongo-keyfile:/etc/mongo-keyfile:ro # uncomment and compose up again when generate mongo-keyfile
+      - ./mongo-keyfile:/etc/mongo-keyfile:ro # uncomment and compose up again when generate mongo-keyfile
     restart: always
     ports:
       - 27017:27017
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-    # command: "mongod --replSet rs0 --auth --keyFile /etc/mongo-keyfile --bind_ip_all" # uncomment and compose up again when generate mongo-keyfile
+    command: "mongod --replSet rs0 --auth --keyFile /etc/mongo-keyfile --bind_ip_all" # uncomment and compose up again when generate mongo-keyfile
 
   minio:
     image: minio/minio:RELEASE.2025-04-08T15-41-24Z
@@ -25,6 +25,27 @@ services:
       MINIO_ROOT_USER: minioadmin # Change to a secure user in production
       MINIO_ROOT_PASSWORD: minioadmin # Change to a secure password
     command: server /data --console-address ":9001"
+
+  imovie:
+    image: ewadus/imovie:1.0.0
+    container_name: imovie-app
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo
+      - minio  
+    environment:
+      DATABASE_URL: "mongodb://root:example@mongo:27017/imovie?authSource=admin"
+      DATABASE_NAME: imovie
+      MINIO_ACCESSKEY: F3mKywsbpESYT5W3fQNF
+      MINIO_SECRETKEY: srMW2r60dDHa8Lc7ScShciMyUXJERRvLBxSzh3FL
+      MINIO_ENDPOINT: minio
+      MINIO_PORT: 9000
+      MINIO_BUCKET: thaimovie
+      NEXTAUTH_SECRET: my_secret
+      NEXTAUTH_URL: http://localhost:3000  
+      NODE_ENV: development
 
 volumes:
   mongo_data:
