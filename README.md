@@ -6,19 +6,21 @@ Individual project for studying and doing portfolio. not for public
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`DATABASE_URL`="mongodb://root:example@0.0.0.0:27017/iscreamdb?authSource=admin"
-`MINIO_ACCESSKEY`=YSx5e6Exx3fHmUAHpTYu
-`MINIO_SECRETKEY`=1xkBMA9AAOZhk5UHu8zpaUjV4rPuqJI5n0HaKNnH
+`DATABASE_URL`="mongodb://root:example@mongo:27017/imovie?authSource=admin"
+`DATABASE_NAME`=imovie
+`MINIO_ACCESSKEY`=KRwjLWPJax0TJFH3nS8w
+`MINIO_SECRETKEY`=emqhDOsDV7ODBqNe4xYC8zqtVYewDgOqpT9bPOOB
 `MINIO_ENDPOINT`=localhost
 `MINIO_PORT`=9000
 `MINIO_BUCKET`=thaimovie
 `NEXTAUTH_SECRET`=my_secret
 `NEXTAUTH_URL`=http://localhost:3000
+`NODE_ENV`=development
 
 # Deployment
 
 
-### Docker compose Steps
+### Docker compose Steps (**Skip to install manually for now)
 
 1. Generate mongo-keyfile
 
