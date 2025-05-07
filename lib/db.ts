@@ -35,6 +35,10 @@ export const minioClient = async (filePath: string) => {
     secretKey: MINIO_SECRETKEY,
   });
 
+  console.log("try to connect minio")
+  console.log("env file",MINIO_ENDPOINT,MINIO_PORT,MINIO_ACCESSKEY,MINIO_SECRETKEY)
+
+
   try {
     const url = await client.presignedGetObject(
       MINIO_BUCKET,
@@ -43,6 +47,8 @@ export const minioClient = async (filePath: string) => {
     );
     return url;
   } catch (error) {
+    console.log("error miniClient")
     console.log(error);
+
   }
 };

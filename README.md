@@ -18,6 +18,54 @@ To run this project, you will need to add the following environment variables to
 # Deployment
 
 
+### Docker compose Steps
+
+1. Generate mongo-keyfile
+
+```bash
+   openssl rand -base64 756 > mongo-keyfile
+   chmod 400 mongo-keyfile
+```
+
+2. Run apps
+
+```bash
+   docker compose up -d
+```   
+
+3. Set up Mongo replica set
+
+
+```bash
+docker exec -it mongo mongosh -u root -p example
+
+   rs.initiate({
+   _id: "rs0",
+   members: [
+   { _id: 0, host: "mongo:27017" }
+   ]
+   })
+```
+
+
+4. Connet prisama and push db model to create collection in monogodb
+```bash
+npx prisma generate
+npx prisma db push
+```
+
+
+5. Seeding Metadata in database
+
+   go to http://localhost:3000/seed
+
+6. Set up minio database
+
+- go to http://localhost:9000
+- create bucket and set public bucket in option
+- upload asset https://drive.google.com/file/d/1Djn6kGoA8uuJU1iAEF2QBXBUJjMK3LOC/view?usp=drive_link to the bucket
+- generate key access keys and put it to env file
+
 ### Manual Steps
 
 To deploy this project run

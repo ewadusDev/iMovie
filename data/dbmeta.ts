@@ -1,4 +1,4 @@
-import { MovieMetadata } from "@/types/meta";
+const MINIO_ENDPOINT = process.env.MINIO_ENDPOINT;
 
 export const MOVIESEEDING = [
   {
@@ -6,7 +6,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview1.jpg&version_id=null",
+      `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview1.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "14m 24s",
     videoUrl: "iscream/iScream_ep1_บุกสุสานรถ/iScream_ep1_บุกสุสานรถ.m3u8",
@@ -16,7 +16,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview2.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview2.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "17m 04s",
     videoUrl: "iscream/iScream_ep2_บุกบ้านผีโหด/iScream_ep2_บุกบ้านผีโหด.m3u8",
@@ -26,7 +26,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview3.1.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview3.1.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "8m 53s",
     videoUrl:
@@ -37,7 +37,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview3.2.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview3.2.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "10m 18s",
     videoUrl:
@@ -48,7 +48,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview4.1.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview4.1.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "13m 46s",
     videoUrl:
@@ -59,7 +59,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview4.2.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview4.2.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "13m 51s",
     videoUrl:
@@ -70,7 +70,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview5.1.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview5.1.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "13m 20s",
     videoUrl:
@@ -81,7 +81,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview5.2.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview5.2.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "9m 34s",
     videoUrl:
@@ -92,7 +92,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview6.1.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview6.1.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "14m 14s",
     videoUrl:
@@ -103,7 +103,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview6.2.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview6.2.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "19m 27s",
     videoUrl:
@@ -114,7 +114,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview7.1.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview7.1.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "15m 16s",
     videoUrl:
@@ -125,7 +125,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview7.2.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview7.2.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "18m 21s",
     videoUrl:
@@ -136,7 +136,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview8.1.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview8.1.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "20m 31s",
     videoUrl:
@@ -147,7 +147,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview8.2.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview8.2.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "19m 16s",
     videoUrl:
@@ -158,7 +158,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview9.1.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview9.1.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "21m 25s",
     videoUrl:
@@ -169,7 +169,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview9.2.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview9.2.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "23m 56s",
     videoUrl:
@@ -180,7 +180,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview10.1.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview10.1.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "18m 43s",
     videoUrl:
@@ -191,7 +191,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview10.2.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview10.2.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "22m 11s",
     videoUrl:
@@ -202,7 +202,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview10.5.1.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview10.5.1.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "11m 01w",
     videoUrl:
@@ -213,7 +213,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview10.5.2.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview10.5.2.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "16m 45s",
     videoUrl:
@@ -224,7 +224,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview11.1.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview11.1.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "24m 48s",
     videoUrl:
@@ -235,7 +235,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview11.2.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview11.2.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "25m 45s",
     videoUrl:
@@ -246,7 +246,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview12.1.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview12.1.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "27m 05s",
     videoUrl:
@@ -257,7 +257,7 @@ export const MOVIESEEDING = [
     description:
       "แนวคิดของรายการคือการท้าทายความเชื่อเรื่องผีด้วยวิธีการที่แหวกแนว เช่น การพูดจาหยาบคาย การแกล้งกันอย่างสุดโต่ง หรือการกระทำที่อาจถูกมองว่าเป็นการลบหลู่สิ่งศักดิ์สิทธิ์ . อย่างไรก็ตาม ทีมงานยืนยันว่าจุดประสงค์ของรายการคือการพิสูจน์และนำเสนอความเชื่อในมุมมองที่แตกต่าง ไม่ได้มีเจตนาลบหลู่",
     thumbnailUrl:
-      "http://localhost:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview12.2.jpg&version_id=null",
+     `http://${MINIO_ENDPOINT}:9001/api/v1/buckets/thaimovie/objects/download?preview=true&prefix=iscreampreview%2Fpreview12.2.jpg&version_id=null`,
     genre: "Comady Horror TV Show",
     duration: "29m 49s",
     videoUrl:
