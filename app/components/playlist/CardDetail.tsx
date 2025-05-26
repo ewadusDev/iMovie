@@ -28,7 +28,7 @@ const CardDetail = ({ movie }: { movie: MovieMetadata }) => {
         />
         {/* Netflix888 logo */}
         <Image
-          src={"/logo/medium-letter.png"}
+          src={"/imovie-icon.png"}
           alt={"Image"}
           width={24}
           height={24}

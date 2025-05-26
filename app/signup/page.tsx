@@ -31,7 +31,7 @@ const SignUpPage = () => {
         <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 container mx-auto">
           <nav className="flex h-fit items-center justify-between py-6">
-            <h4 className="text-4xl font-bold text-[#C600D1]">NETFLIX888</h4>
+            <h4 className="text-4xl font-bold text-[#F4006F]">NETFLIX888</h4>
           </nav>
 
           <form
@@ -70,7 +70,7 @@ const SignUpPage = () => {
               className="rounded-sm border border-[#808080] px-4 py-2 text-lg text-white placeholder-white"
             />
             <button
-              className="rounded-sm bg-[#C600D1] px-4 py-2 text-lg font-semibold text-white"
+              className="rounded-sm bg-[#F4006F] px-4 py-2 text-lg font-semibold text-white"
               type="submit"
             >
               Create Account

@@ -7,7 +7,7 @@ const TopNavbar = () => {
   return (
     <nav className="flex items-center justify-between py-6">
       <div className="flex items-center gap-11">
-        <h4 className="text-4xl font-bold text-[#C600D1]">NETFLIX888</h4>
+      <Image src={"/imovie-icon.png"} alt="logo" width={70} height={70} />
         <ul className="flex gap-5 text-white">
           <Link href={"/"}>
             <li>Home</li>

@@ -43,7 +43,7 @@ export default function Home() {
                   className="text-md w-full rounded-sm border-1 border-[#808080] bg-black/50 px-5 py-4 text-white placeholder-[#808080]"
                 />
                 <button
-                  className="w-[270px] rounded-sm bg-[#C600D1] px-4 text-xl font-medium text-white"
+                  className="w-[270px] rounded-sm bg-[#F4006F] px-4 text-xl font-medium text-white"
                   onClick={() => alert("Implement in future very soon")}
                 >
                   Get Started
@@ -270,7 +270,7 @@ export default function Home() {
               className="text-md w-full rounded-sm border-1 border-[#808080] bg-black/50 px-5 py-4 text-white placeholder-[#808080]"
             />
             <button
-              className="w-[270px] rounded-sm bg-[#C600D1] px-4 text-xl font-medium text-white"
+              className="w-[270px] rounded-sm bg-[#F4006F] px-4 text-xl font-medium text-white"
               onClick={() => alert("Implement in future very soon")}
             >
               Get Started

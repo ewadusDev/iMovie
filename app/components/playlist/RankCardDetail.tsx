@@ -41,12 +41,7 @@ const RankCardDetail = ({
         />
         {/* Netflix888 logo */}
         <div className="z-40 p-1.5">
-          <Image
-            src={"/logo/medium-letter.png"}
-            alt="Logo"
-            width={11}
-            height={20}
-          />
+          <Image src={"/imovie-icon.png"} alt="Logo" width={11} height={20} />
         </div>
 
         <div className="flex justify-center">
