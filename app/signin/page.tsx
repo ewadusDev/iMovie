@@ -39,7 +39,7 @@ const LoginPage = () => {
         <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 container mx-auto">
           <nav className="flex h-fit items-center justify-between py-6">
-            <h4 className="text-4xl font-bold text-[#F4006F]">NETFLIX888</h4>
+            <h4 className="text-4xl font-bold text-[#F4006F]">iMovie</h4>
           </nav>
 
           <form
@@ -66,7 +66,7 @@ const LoginPage = () => {
               Sign In
             </button>
             <p className="text-white">
-              New to Netflix888?{" "}
+              New to iMovie?{" "}
               <span className="font-semibold underline">
                 <Link href={"/signup"}>Sign up now.</Link>
               </span>

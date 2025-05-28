@@ -144,14 +144,14 @@ export default function Home() {
           <div className="px-36">
             <div className="mb-2" onClick={() => setIsCollaped1(!isCollaped1)}>
               <div className="flex items-center justify-between bg-[#2a2a2a] p-6">
-                <p className="text-white">What is Netflix888?</p>
+                <p className="text-white">What is iMovie?</p>
                 <p className="text-white">+</p>
               </div>
               <div
                 className={`mt-2 bg-[#2a2a2a] p-6 text-white ${isCollaped1 ? "block" : "hidden"}`}
               >
                 <p>
-                  Netflix888 is a streaming service that offers a wide variety
+                  iMovie is a streaming service that offers a wide variety
                   of award-winning TV shows, movies, anime, documentaries, and
                   more on thousands of internet-connected devices.
                 </p>
@@ -167,14 +167,14 @@ export default function Home() {
 
             <div className="mb-2" onClick={() => setIsCollaped2(!isCollaped2)}>
               <div className="flex items-center justify-between bg-[#2a2a2a] p-6">
-                <p className="text-white">How much does Netflix888 cost?</p>
+                <p className="text-white">How much does iMovie cost?</p>
                 <p className="text-white">+</p>
               </div>
               <div
                 className={`mt-2 bg-[#2a2a2a] p-6 text-white ${isCollaped2 ? "block" : "hidden"}`}
               >
                 <p>
-                  Watch Netflix888 on your smartphone, tablet, Smart TV, laptop,
+                  Watch iMovie on your smartphone, tablet, Smart TV, laptop,
                   or streaming device, all for one fixed monthly fee. Plans
                   range from $7.99 to $24.99 a month (pre-tax). No extra costs,
                   no contracts.
@@ -191,17 +191,17 @@ export default function Home() {
                 className={`mt-2 bg-[#2a2a2a] p-6 text-white ${isCollaped3 ? "block" : "hidden"}`}
               >
                 <p>
-                  Watch anywhere, anytime. Sign in with your Netflix888 account
-                  to watch instantly on the web at Netflix888.com from your
+                  Watch anywhere, anytime. Sign in with your iMovie account
+                  to watch instantly on the web at iMovie.com from your
                   personal computer or on any internet-connected device that
-                  offers the Netflix888 app, including smart TVs, smartphones,
+                  offers the iMovie app, including smart TVs, smartphones,
                   tablets, streaming media players and game consoles. You can
                   also download your favorite shows with the iOS or Android app.
                 </p>
                 <br />
                 <p>
                   Use downloads to watch while you&apos;re on the go and without
-                  an internet connection. Take Netflix888 with you anywhere.
+                  an internet connection. Take iMovie with you anywhere.
                 </p>
               </div>
             </div>
@@ -215,7 +215,7 @@ export default function Home() {
                 className={`mt-2 bg-[#2a2a2a] p-6 text-white ${isCollaped4 ? "block" : "hidden"}`}
               >
                 <p>
-                  Netflix888 is flexible. There are no pesky contracts and no
+                  iMovie is flexible. There are no pesky contracts and no
                   commitments. You can easily cancel your account online in two
                   clicks. There are no cancellation fees - start or stop your
                   account anytime.
@@ -225,15 +225,15 @@ export default function Home() {
 
             <div className="mb-2" onClick={() => setIsCollaped5(!isCollaped5)}>
               <div className="flex items-center justify-between bg-[#2a2a2a] p-6">
-                <p className="text-white">What can i watch on Netflix888?</p>
+                <p className="text-white">What can i watch on iMovie?</p>
                 <p className="text-white">+</p>
               </div>
               <div
                 className={`mt-2 bg-[#2a2a2a] p-6 text-white ${isCollaped5 ? "block" : "hidden"}`}
               >
                 <p>
-                  Netflix888 has an extensive library of feature films,
-                  documentaries, TV shows, anime, award-winning Netflix888
+                  iMovie has an extensive library of feature films,
+                  documentaries, TV shows, anime, award-winning iMovie
                   originals, and more. Watch as much as you want, anytime you
                   want.
                 </p>
@@ -242,7 +242,7 @@ export default function Home() {
 
             <div className="mb-2" onClick={() => setIsCollaped6(!isCollaped6)}>
               <div className="flex items-center justify-between bg-[#2a2a2a] p-6">
-                <p className="text-white">Is Netflix888 good for kids?</p>
+                <p className="text-white">Is iMovie good for kids?</p>
                 <p className="text-white">+</p>
               </div>
               <div

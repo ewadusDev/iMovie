@@ -26,12 +26,12 @@ const CardDetail = ({ movie }: { movie: MovieMetadata }) => {
           sizes="100vw"
           className="rounded-[2px]"
         />
-        {/* Netflix888 logo */}
+        {/* iMovie logo */}
         <Image
           src={"/imovie-icon.png"}
           alt={"Image"}
-          width={24}
-          height={24}
+          width={40}
+          height={40}
           className="relative z-10 p-1.5"
         />
         <div className="flex justify-center">

@@ -39,13 +39,13 @@ const RankCardDetail = ({
           alt="Image"
           className=""
         />
-        {/* Netflix888 logo */}
+        {/* iMovie logo */}
         <div className="z-40 p-1.5">
-          <Image src={"/imovie-icon.png"} alt="Logo" width={11} height={20} />
+          <Image src={"/imovie-icon.png"} alt="Logo" width={40} height={40} />
         </div>
 
-        <div className="flex justify-center">
-          <p className="w-fit rounded-t-sm bg-[#f50723] px-1.5 py-0.5 text-[10px] text-white">
+        <div className="flex justify-center z-20">
+          <p className="w-fit rounded-t-sm bg-[#f50723] px-1.5 py-0.5 text-[15px] text-white">
             Recently Added
           </p>
         </div>
