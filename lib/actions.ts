@@ -61,7 +61,6 @@ export const seedMovieMetaData = async () => {
 
 export const createUser = async (prevState: string, formData: FormData) => {
   const data = Object.fromEntries(formData);
-  console.log("data", data);
 
   const { name, username, email, password, cfPassword } = data;
 
